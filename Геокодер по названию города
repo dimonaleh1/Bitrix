@@ -1,0 +1,49 @@
+function GeoCords($City){
+        $output = $City;
+            $output .= $adress; 
+            $params = array(
+                'geocode' => $output,   // адрес
+                'format'  => 'json',    // формат ответа
+                'results' => 1,         // количество выводимых результатов
+            );
+            $response = json_decode(file_get_contents('http://geocode-maps.yandex.ru/1.x/?' . http_build_query($params, '', '&')));
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            $coord = array();
+            $coord1 = array();
+            $coord2= array();
+            $coord3 = array();
+            $coord4 = array();
+            $coord5 = array();
+            foreach ($response as $key => $value) {
+                $coord = $value;
+                
+                } 
+                 foreach ($coord as $key => $value) {
+                    $coord1 =$value;
+                                
+                    }
+                foreach ($coord1 as $key => $value) {
+                    $coord2 =$value;
+                                
+                    }
+                    foreach ($coord2 as $key => $value) {
+                    $coord3 =$value;
+                                
+                    }
+                    foreach ($coord3 as $key => $value) {
+                    $coord4 =$value;
+                    
+                                
+                    }
+                    foreach ($coord4 as $key => $value) {
+                    $coord5['PROPERTY_MAP_VALUE'] = $value;
+                                
+                    }
+                    foreach ($coord5 as $key => $value) {
+                    $coord1=$value->pos;
+                    $coord = array ('PROPERTY_MAP_VALUE' =>$coord1);
+                                
+                    }
+             // $coord;
+            return $arTmp1 = explode(' ', $coord1);
+}
